@@ -36,18 +36,18 @@
 - Release notes MUST group changes by change type, using Spring Boot-style emoji headings such as `:star: New Features`, `:lady_beetle: Bug Fixes`, `:notebook_with_decorative_cover: Documentation`, and `:hammer: Dependency Upgrades`.
 - All feature changes in one release MUST share a single `:star: New Features` section; split sections only when the change type differs.
 - Every GitHub Release MUST begin as a draft.
-- The release workflow MUST build the draft's `v<version>` tag, pass `verifyRelease`, and attach the resulting plugin ZIP before the draft is published.
+- The release workflow MUST build the draft's `v<version>` tag, run fast package validation, attach the resulting plugin ZIP, and upload the same ZIP to JetBrains Marketplace before the draft is published.
 
 ## Publishing
 
 - A GitHub Release draft MUST be published only after its release workflow succeeds.
 - The first JetBrains Marketplace listing MUST be created through the Marketplace UI.
-- Marketplace uploads MAY be automated only after the first manual Marketplace listing and signing credentials are configured; JetBrains approval remains manual.
+- Marketplace uploads MUST use a repository secret only after the first manual Marketplace listing; JetBrains approval remains manual.
 
 ## Verification
 
 - Changes SHOULD be small, runnable, and tested at the closest useful level.
-- Pull request CI MUST run fast tests and package validation; the two-IDE Plugin Verifier is reserved for the release workflow.
+- Pull request CI MUST run fast tests and package validation; JetBrains Marketplace MUST own compatibility verification for submitted plugin versions.
 - Renderer tests SHOULD cover valid input, invalid diagrams, and unsafe content.
 - Changes affecting lightweight behavior MUST measure the relevant size, startup, or memory impact.
 - Manual smoke testing MUST cover only behavior that automation cannot verify.
