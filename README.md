@@ -5,7 +5,7 @@
 ## Principles
 
 - Read-only and lightweight by design
-- AI or another tool writes Markdown; MarkdownNeat renders it for reading in the IDE
+- AI and IDE tools edit plain Markdown; MarkdownNeat only renders it for reading
 - Built-in diagram rendering, starting with Mermaid
 - Standard and Enhanced profiles, bundled themes, and adjustable typography
 - Offline core rendering with safe handling of untrusted content
