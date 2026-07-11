@@ -1,6 +1,7 @@
 # Architecture
 
-This document MUST describe the current MarkdownNeat architecture. Provisional choices are marked as candidates.
+This document MUST describe the current MarkdownNeat architecture.  
+Provisional choices are marked as candidates.
 
 ```text
 Markdown file
@@ -13,9 +14,15 @@ Markdown file
 
 ## Ownership
 
-Kotlin MUST own only JetBrains extension registration, file events, JCEF lifecycle, bridge transport, IDE navigation, Settings UI and persistence, and platform fallback behavior.
+Kotlin MUST own only JetBrains extension registration, file events, JCEF lifecycle,  
+and bridge transport.  
+It MUST also own IDE navigation, Settings UI and persistence,  
+and platform fallback behavior.
 
-TypeScript MUST own Markdown parsing, sanitization, rendering profiles, themes, typography, diagram engines, DOM updates, render scheduling, error isolation, and renderer diagnostics.
+TypeScript MUST own Markdown parsing, sanitization, rendering profiles, themes,  
+typography, and diagram engines.  
+It MUST also own DOM updates, render scheduling, error isolation,  
+and renderer diagnostics.
 
 The bridge MUST remain small:
 
@@ -51,13 +58,15 @@ TypeScript -> Kotlin: ready | rendered | openLink | error
 ## Constraints
 
 - Core rendering MUST work offline.
-- MarkdownNeat MUST own the normal editor for supported Markdown files while enabled.
+- MarkdownNeat MUST own the normal editor  
+  for supported Markdown files while enabled.
 - Content MUST be sanitized and MUST NOT write to the project.
 - Renderer resources MUST be lazy-loaded and disposed with the viewer.
 - Diagram failures MUST remain local to their block.
 - Size, startup, render time, and memory MUST be measured.
 
-The current lightweight baseline and reproduction command are recorded in [Performance](performance.md).
+The current lightweight baseline and reproduction command  
+are recorded in [Performance](performance.md).
 
 ## Open Decisions
 
