@@ -26,7 +26,7 @@ MarkdownNeat MUST be the exclusive normal editor for `.md` and `.markdown` files
 - MarkdownNeat behavior is stable during startup and indexing.
 - Other Markdown editors are not presented in the normal editor composite while MarkdownNeat is enabled.
 - Installing MarkdownNeat deliberately favors read-only viewing over editing for supported Markdown files.
-- If another plugin also requests exclusive editor ownership, IntelliJ may retain both providers. This case requires the user to keep only one exclusive viewer enabled and is documented in [Compatibility](../compatibility.md).
+- If another plugin also requests exclusive editor ownership, IntelliJ may retain both providers. This case requires the user to keep only one exclusive viewer enabled.
 - `HIDE_OTHER_EDITORS` is experimental in the 2025.2 and 2025.3 platform APIs. Every supported IDE release MUST remain covered by Plugin Verifier.
 
 Keeping MarkdownNeat as a secondary editor was rejected because it made renderer ownership ambiguous.  
