@@ -41,6 +41,7 @@
 ## Git
 
 - Work MUST happen on a focused branch and reach `main` through a pull request.
+- AI agents MUST NOT merge pull requests. Only the project owner may merge.
 - Unrelated changes MUST NOT be mixed in one commit.
 - Generated output, IDE caches, and local environment files MUST NOT be committed.
 - Commit, push, PR creation, and publishing MUST NOT happen without the project owner's explicit request.
