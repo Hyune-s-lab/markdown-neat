@@ -13,7 +13,7 @@ Markdown file
 
 ## Ownership
 
-Kotlin MUST own only JetBrains extension registration, file events, JCEF lifecycle, bridge transport, IDE navigation, and platform fallback behavior.
+Kotlin MUST own only JetBrains extension registration, file events, JCEF lifecycle, bridge transport, IDE navigation, Settings UI and persistence, and platform fallback behavior.
 
 TypeScript MUST own Markdown parsing, sanitization, rendering profiles, themes, typography, diagram engines, DOM updates, render scheduling, error isolation, and renderer diagnostics.
 
@@ -35,6 +35,7 @@ TypeScript -> Kotlin: ready | rendered | openLink | error
 | Markdown | Marked 18.0.6 |
 | Sanitization | DOMPurify 3.4.11 plus a restrictive Content Security Policy |
 | Initial styling | github-markdown-css 5.9.0 with fixed GitHub Light and GitHub Dark output |
+| Theme setting | Application-level Light or Dark selection under Settings > Tools > MarkNeat |
 | Renderer delivery | One self-contained HTML resource bundled inside the plugin |
 | Plugin ID | `dev.hyunelab.markneat` |
 

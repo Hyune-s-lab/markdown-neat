@@ -6,7 +6,7 @@ Measurements MUST be repeated for releases that materially change the renderer o
 
 Measured on an Apple Silicon Mac with Java 21 and Node.js 22.21.1:
 
-- Plugin distribution: 53.5 KB
+- Plugin distribution: 64.6 KB
 - Self-contained renderer: 109.6 KB raw, 28.9 KB gzip
 - Renderer module load: 45.6 ms and 4.1 MiB heap
 - 100 KiB Markdown fixture: 185.9 ms median, 297.5 ms p95, and 42.1 MiB retained heap for one rendered result

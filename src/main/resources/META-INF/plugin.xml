@@ -11,5 +11,11 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <fileEditorProvider implementation="dev.hyunelab.markneat.editor.MarkNeatFileEditorProvider"/>
+        <applicationService serviceImplementation="dev.hyunelab.markneat.settings.MarkNeatSettings"/>
+        <applicationConfigurable
+                parentId="tools"
+                id="dev.hyunelab.markneat.settings"
+                displayName="MarkNeat"
+                instance="dev.hyunelab.markneat.settings.MarkNeatSettingsConfigurable"/>
     </extensions>
 </idea-plugin>

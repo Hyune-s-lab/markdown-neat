@@ -1,7 +1,6 @@
 package dev.hyunelab.markneat.editor
 
 import com.intellij.ide.BrowserUtil
-import com.intellij.ide.ui.LafManagerListener
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.editor.event.DocumentEvent
@@ -16,10 +15,11 @@ import com.intellij.openapi.util.Disposer
 import com.intellij.openapi.util.UserDataHolderBase
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.openapi.vfs.VirtualFileManager
-import com.intellij.ui.JBColor
 import com.intellij.ui.jcef.JBCefBrowser
 import com.intellij.ui.jcef.JBCefBrowserBase
 import com.intellij.ui.jcef.JBCefJSQuery
+import dev.hyunelab.markneat.settings.MarkNeatSettings
+import dev.hyunelab.markneat.settings.MarkNeatSettingsListener
 import org.cef.browser.CefBrowser
 import org.cef.browser.CefFrame
 import org.cef.handler.CefLoadHandlerAdapter
@@ -76,8 +76,8 @@ internal class MarkNeatJcefFileEditor(
         }, this)
 
         ApplicationManager.getApplication().messageBus.connect(this).subscribe(
-            LafManagerListener.TOPIC,
-            LafManagerListener { render() },
+            MarkNeatSettingsListener.TOPIC,
+            MarkNeatSettingsListener { render() },
         )
 
         browser.jbCefClient.addLoadHandler(object : CefLoadHandlerAdapter() {
@@ -122,7 +122,7 @@ internal class MarkNeatJcefFileEditor(
         if (!rendererReady || !isValid) {
             return
         }
-        val theme = if (JBColor.isBright()) "light" else "dark"
+        val theme = MarkNeatSettings.getInstance().theme.wireValue
         val request = """
             {"version":1,"source":${document.text.toJsonString()},"baseUrl":${file.url.toJsonString()},"theme":"$theme"}
         """.trimIndent()

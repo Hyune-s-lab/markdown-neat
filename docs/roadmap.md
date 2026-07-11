@@ -3,7 +3,7 @@
 ## 0.1.0 — Markdown Viewer
 
 - Ship an installable, lightweight, read-only Markdown preview for JetBrains IDEs.
-- Render GitHub Flavored Markdown with fixed GitHub Light/Dark styling.
+- Render GitHub Flavored Markdown with selectable GitHub Light or GitHub Dark styling, independent of the IDE theme.
 - Support relative images and links, automatic refresh, offline rendering, sanitization, and JCEF fallback.
 
 ## 0.2.0 — Mermaid
