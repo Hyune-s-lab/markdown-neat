@@ -47,6 +47,7 @@
 ## Verification
 
 - Changes SHOULD be small, runnable, and tested at the closest useful level.
+- Pull request CI MUST run fast tests and package validation; the two-IDE Plugin Verifier is reserved for the release workflow.
 - Renderer tests SHOULD cover valid input, invalid diagrams, and unsafe content.
 - Changes affecting lightweight behavior MUST measure the relevant size, startup, or memory impact.
 - Manual smoke testing MUST cover only behavior that automation cannot verify.
