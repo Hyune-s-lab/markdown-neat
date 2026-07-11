@@ -2,6 +2,7 @@ package dev.hyunelab.markneat.editor
 
 import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.application.ApplicationManager
+import com.intellij.openapi.application.ModalityState
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.editor.event.DocumentEvent
 import com.intellij.openapi.editor.event.DocumentListener
@@ -77,7 +78,7 @@ internal class MarkNeatJcefFileEditor(
 
         ApplicationManager.getApplication().messageBus.connect(this).subscribe(
             MarkNeatSettingsListener.TOPIC,
-            MarkNeatSettingsListener { render() },
+            MarkNeatSettingsListener { scheduleThemeRender() },
         )
 
         browser.jbCefClient.addLoadHandler(object : CefLoadHandlerAdapter() {
@@ -127,6 +128,15 @@ internal class MarkNeatJcefFileEditor(
             {"version":1,"source":${document.text.toJsonString()},"baseUrl":${file.url.toJsonString()},"theme":"$theme"}
         """.trimIndent()
         browser.cefBrowser.executeJavaScript("window.markneat.render($request);", file.url, 0)
+    }
+
+    private fun scheduleThemeRender() {
+        ApplicationManager.getApplication().invokeLater({
+            if (isValid) {
+                render()
+                browser.component.repaint()
+            }
+        }, ModalityState.any())
     }
 
     private fun openLink(href: String) {
