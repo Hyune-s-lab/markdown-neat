@@ -31,8 +31,6 @@ jobs:
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v6
-        with:
-          cache-disabled: true
 
       - name: Check and build plugin
         run: ./gradlew check buildPlugin verifyPluginProjectConfiguration verifyPluginStructure
