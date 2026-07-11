@@ -25,18 +25,21 @@ Kotlin -> TypeScript: render(request)
 TypeScript -> Kotlin: ready | rendered | openLink | error
 ```
 
-## Current Candidates
+## Current Stack
 
-| Area | Candidate |
+| Area | Choice |
 | --- | --- |
-| Host | Kotlin + IntelliJ Platform Gradle Plugin 2.x |
-| Viewer | JCEF |
-| Renderer | TypeScript |
-| Markdown | `markdown-it` or `remark-gfm` |
+| Host | Kotlin 2.1.20 + IntelliJ Platform Gradle Plugin 2.18.1 |
+| IDE integration | `FileEditorProvider` with a read-only JCEF editor and plain-text fallback |
+| Compatibility baseline | IntelliJ Platform 2025.2 (`since-build` 252) |
+| Renderer | TypeScript 7.0.2 bundled by Vite 8.1.4 |
+| Markdown | Marked 18.0.6 |
+| Sanitization | DOMPurify 3.4.11 plus a restrictive Content Security Policy |
+| Initial styling | github-markdown-css 5.9.0 with fixed GitHub Light and GitHub Dark output |
+| Renderer delivery | One self-contained HTML resource bundled inside the plugin |
 | First diagram engine | Mermaid 11.16.0 |
 | Mermaid icons | Curated, bundled Iconify packs |
 | Rendering profiles | Standard and Enhanced |
-| Initial themes | GitHub Light and GitHub Dark |
 | Typography | Configurable body and code font family/size |
 | Plugin ID | `dev.hyunelab.markneat` |
 
@@ -50,9 +53,6 @@ TypeScript -> Kotlin: ready | rendered | openLink | error
 
 ## Open Decisions
 
-- `FileEditorProvider` or a dedicated preview action
-- `markdown-it` or `remark-gfm`
-- First supported IntelliJ version
 - Syntax highlighter
 - Profile, theme, and typography contract
 - Font discovery and fallback behavior
