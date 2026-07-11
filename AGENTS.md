@@ -24,8 +24,8 @@
 
 ## Documentation
 
-- `README.md` MUST remain a concise product entry point.
-- `docs/roadmap.md` MUST own milestones and future scope.
+- `README.md` MUST remain a concise product entry point and describe only implemented features.
+- `docs/roadmap.md` MUST own the feature matrix and future scope.
 - `docs/architecture.md` MUST always describe the current design and open decisions.
 - Accepted architecture decisions MUST be recorded under `docs/decisions/` without turning `docs/architecture.md` into a decision log.
 - GitHub Releases MUST own published release notes and version history.

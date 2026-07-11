@@ -6,7 +6,7 @@
     <description><![CDATA[
         <p>MarkdownNeat is a lightweight, read-only Markdown viewer for JetBrains IDEs.</p>
         <ul>
-            <li>GitHub-style Markdown rendering</li>
+            <li>GitHub Flavored Markdown (GFM)</li>
             <li>Light and Dark themes independent of the IDE theme</li>
             <li>Automatic refresh when files change</li>
             <li>Relative image and link support</li>
@@ -14,6 +14,7 @@
         </ul>
         <p>While enabled, MarkdownNeat opens <code>.md</code> and <code>.markdown</code> files in its read-only viewer instead of other file editors.</p>
         <p>AI and IDE tools can continue to modify the underlying files, and MarkdownNeat refreshes the rendered view automatically.</p>
+        <p>See the <a href="https://github.com/Hyune-s-lab/markdown-neat/blob/main/docs/roadmap.md">roadmap</a> for implemented and planned features.</p>
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>

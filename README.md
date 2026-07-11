@@ -5,15 +5,15 @@
 
 ## Features
 
-- GitHub-style Markdown rendering
+- GitHub Flavored Markdown (GFM)
 - Read-only viewing with automatic refresh
-- Light and Dark themes independent of the IDE theme
+- GitHub Light and GitHub Dark, independent of the IDE theme
 - Relative image and link support
 - Offline rendering with untrusted content sanitization
 
 ## Documentation
 
-- [Roadmap](docs/roadmap.md) — releases and future scope
+- [Roadmap](docs/roadmap.md) — implemented and planned features
 - [Architecture](docs/architecture.md) — current design and open decisions
 
 ## License

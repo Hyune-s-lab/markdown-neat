@@ -54,15 +54,6 @@ Run `npm run measure:renderer` to reproduce renderer module load, render latency
 Times and memory are a local baseline, not release budgets.  
 They isolate MarkdownNeat's TypeScript renderer in Node.js with JSDOM and do not claim to measure the IDE-owned JCEF runtime.
 
-## Planned Candidates
-
-| Area | Candidate |
-| --- | --- |
-| First diagram engine | Mermaid 11.16.0 |
-| Mermaid icons | Curated, bundled Iconify packs |
-| Rendering profiles | Standard and Enhanced |
-| Typography | Configurable body and code font family/size |
-
 ## Constraints
 
 - Core rendering MUST work offline.
