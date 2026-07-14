@@ -5,7 +5,7 @@ Newest planned version first. Published version history belongs in GitHub Releas
 ## 0.4.x — Code Highlighting and Editing Handoff
 
 - Add offline syntax highlighting with a deliberately scoped set of language grammars, loaded through the shared optional-runtime boundary.
-- Strengthen bold and inline code emphasis with theme-consistent accent colors, so emphasis stays visible with fonts that lack a true bold face. Informed by MarkTone's colored-emphasis approach while keeping MarkdownNeat's IDE-independent themes.
+- Color bold and inline code with theme-consistent accents so emphasis stays visible without a true bold face.
 - Add an Open as Text action that opens the underlying file in the IDE text editor without disabling MarkdownNeat.
 - Preserve heading anchors when a link opens another Markdown file.
 - Detect viewer bootstrap failures, log them, and fall back to the plain-text viewer.
