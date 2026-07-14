@@ -231,30 +231,18 @@ class MarkdownNeatSettingsConfigurable internal constructor(
         const val FONT_FALLBACK_TOOLTIP =
             "If the selected font is unavailable, MarkdownNeat uses the default system font."
         val RECOMMENDED_BODY_FONTS = listOf(
-            "Atkinson Hyperlegible",
-            "Inter",
             "Pretendard",
-            "Noto Sans",
-            "Noto Sans CJK KR",
-            "Apple SD Gothic Neo",
-            "Segoe UI",
-            "Arial",
-            "Helvetica",
-            "Georgia",
+            "Inter",
+            "Atkinson Hyperlegible",
             "Noto Serif",
-            "Times New Roman",
+            "D2Coding",
         )
         val RECOMMENDED_CODE_FONTS = listOf(
             "JetBrains Mono",
             "D2Coding",
             "Fira Code",
             "Cascadia Code",
-            "SF Mono",
             "Menlo",
-            "Monaco",
-            "Consolas",
-            "Source Code Pro",
-            "Ubuntu Mono",
         )
 
         fun displayedFont(fontFamily: String): String = fontFamily.ifEmpty { DEFAULT_FONT }

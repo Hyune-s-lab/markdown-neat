@@ -50,7 +50,7 @@ class MarkdownNeatSettingsConfigurableTest {
         assertEquals("Default (system font)", bodyFontField.getItemAt(0))
         assertEquals("Default (system font)", codeFontField.getItemAt(0))
         assertEquals(
-            listOf("Default (system font)", "Atkinson Hyperlegible", "Arial"),
+            listOf("Default (system font)", "Atkinson Hyperlegible"),
             bodyFontField.items(),
         )
         assertEquals(
@@ -129,7 +129,7 @@ class MarkdownNeatSettingsConfigurableTest {
         val configurable = MarkdownNeatSettingsConfigurable(
             settings = settings,
             notifySettingsChanged = {},
-            availableFontFamilies = { listOf("Arial", "JetBrains Mono") },
+            availableFontFamilies = { listOf("Atkinson Hyperlegible", "JetBrains Mono") },
             previewFactory = { null },
         )
         val component = configurable.createComponent()
@@ -145,7 +145,7 @@ class MarkdownNeatSettingsConfigurableTest {
         assertEquals(1152, contentWidthField.value)
         assertEquals("Maximum content width: 1152 px", contentWidthLabel.text)
         assertEquals(
-            listOf("Default (system font)", "Legacy Reading Font", "Arial"),
+            listOf("Default (system font)", "Legacy Reading Font", "Atkinson Hyperlegible"),
             bodyFontField.items(),
         )
         assertEquals(
